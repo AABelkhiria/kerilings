@@ -49,7 +49,7 @@ fn check_cargo_toml(
         }
 
         bail!(
-            "The file `Cargo.toml` is outdated. Run `rustlings dev update` to update it. Then run `rustlings dev check` again"
+            "The file `Cargo.toml` is outdated. Run `kerilings dev update` to update it. Then run `kerilings dev check` again"
         );
     }
 
@@ -252,7 +252,7 @@ fn check_exercises(info_file: &'static InfoFile, cmd_runner: &'static CmdRunner)
         ),
         Ordering::Greater => bail!(
             "`format_version` > {CURRENT_FORMAT_VERSION} (supported version)\n\
-             Try updating the Rustlings program"
+             Try updating the kerilings program"
         ),
         Ordering::Equal => (),
     }
@@ -377,7 +377,7 @@ pub fn check(require_solutions: bool) -> Result<()> {
     }
 
     if cfg!(debug_assertions) {
-        // A hack to make `cargo dev check` work when developing Rustlings.
+        // A hack to make `cargo dev check` work when developing kerilings.
         check_cargo_toml(&info_file.exercises, "dev/Cargo.toml", b"../")?;
     } else {
         check_cargo_toml(&info_file.exercises, "Cargo.toml", b"")?;

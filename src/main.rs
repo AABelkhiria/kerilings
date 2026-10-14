@@ -25,21 +25,21 @@ mod watch;
 
 const CURRENT_FORMAT_VERSION: u8 = 1;
 
-/// Rustlings is a collection of small exercises to get you used to writing and reading Rust code
+/// kerilings is a collection of small exercises to learn KERI, CESR and ACDC by writing Rust code
 #[derive(Parser)]
 #[command(version)]
 struct Args {
     #[command(subcommand)]
     command: Option<Subcommands>,
     /// Manually run the current exercise using `r` in the watch mode.
-    /// Only use this if Rustlings fails to detect exercise file changes.
+    /// Only use this if kerilings fails to detect exercise file changes.
     #[arg(long)]
     manual_run: bool,
 }
 
 #[derive(Subcommand)]
 enum Subcommands {
-    /// Initialize the official Rustlings exercises
+    /// Initialize the official kerilings exercises
     Init,
     /// Run a single exercise. Runs the next pending exercise if the exercise name is not specified
     Run {
@@ -58,7 +58,7 @@ enum Subcommands {
         /// The name of the exercise
         name: Option<String>,
     },
-    /// Commands for developing (community) Rustlings exercises
+    /// Commands for developing (community) kerilings exercises
     #[command(subcommand)]
     Dev(DevCommands),
 }
@@ -66,7 +66,7 @@ enum Subcommands {
 fn main() -> Result<ExitCode> {
     let args = Args::parse();
 
-    if cfg!(not(debug_assertions)) && Path::new("dev/rustlings-repo.txt").exists() {
+    if cfg!(not(debug_assertions)) && Path::new("dev/kerilings-repo.txt").exists() {
         bail!("{OLD_METHOD_ERR}");
     }
 
@@ -193,25 +193,24 @@ fn main() -> Result<ExitCode> {
     Ok(ExitCode::SUCCESS)
 }
 
-const OLD_METHOD_ERR: &str =
-    "You are trying to run Rustlings using the old method before version 6.
-The new method doesn't include cloning the Rustlings' repository.
+const OLD_METHOD_ERR: &str = "You are trying to run kerilings inside its own repository.
+Install kerilings and run `kerilings init` in another directory instead.
 Please follow the instructions in `README.md`:
-https://github.com/rust-lang/rustlings#getting-started";
+https://github.com/AABelkhiria/kerilings#getting-started";
 
 const FORMAT_VERSION_HIGHER_ERR: &str =
     "The format version specified in the `info.toml` file is higher than the last one supported.
-It is possible that you have an outdated version of Rustlings.
-Try to install the latest Rustlings version first.";
+It is possible that you have an outdated version of kerilings.
+Try to install the latest kerilings version first.";
 
 const PRE_INIT_MSG: &str = r"
        Welcome to...
-                 _   _ _
-  _ __ _   _ ___| |_| (_)_ __   __ _ ___
- | '__| | | / __| __| | | '_ \ / _` / __|
- | |  | |_| \__ \ |_| | | | | | (_| \__ \
- |_|   \__,_|___/\__|_|_|_| |_|\__, |___/
-                               |___/
+ _                 _  _  _
+| | __  ___  _ __ (_)| |(_) _ __    __ _  ___
+| |/ / / _ \| '__|| || || || '_ \  / _` |/ __|
+|   < |  __/| |   | || || || | | || (_| |\__ \
+|_|\_\ \___||_|   |_||_||_||_| |_| \__, ||___/
+                                   |___/
 
 The `exercises/` directory couldn't be found in the current directory.
-If you are just starting with Rustlings, run the command `rustlings init` to initialize it.";
+If you are just starting with kerilings, run the command `kerilings init` to initialize it.";

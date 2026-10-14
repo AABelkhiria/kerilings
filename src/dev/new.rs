@@ -86,17 +86,17 @@ target/
 
 const INFO_FILE_BEFORE_FORMAT_VERSION: &str =
     "# The format version is an indicator of the compatibility of community exercises with the
-# Rustlings program.
-# The format version is not the same as the version of the Rustlings program.
-# In case Rustlings makes an unavoidable breaking change to the expected format of community
+# kerilings program.
+# The format version is not the same as the version of the kerilings program.
+# In case kerilings makes an unavoidable breaking change to the expected format of community
 # exercises, you would need to raise this version and adapt to the new format.
-# Otherwise, the newest version of the Rustlings program won't be able to run these exercises.
+# Otherwise, the newest version of the kerilings program won't be able to run these exercises.
 format_version = ";
 
 const INFO_FILE_AFTER_FORMAT_VERSION: &str = r#"
 
 # Optional multi-line message to be shown to users when just starting with the exercises.
-welcome_message = """Welcome to these community Rustlings exercises."""
+welcome_message = """Welcome to these community kerilings exercises."""
 
 # Optional multi-line message to be shown to users after finishing all exercises.
 final_message = """We hope that you found the exercises helpful :D"""
@@ -111,12 +111,12 @@ name = "???"
 # Otherwise, the path is `exercises/NAME.rs`
 # dir = "???"
 
-# Rustlings expects the exercise to contain tests and run them.
+# kerilings expects the exercise to contain tests and run them.
 # You can optionally disable testing by setting `test` to `false` (the default is `true`).
 # In that case, the exercise will be considered done when it just successfully compiles.
 # test = true
 
-# Rustlings will always run Clippy on exercises.
+# kerilings will always run Clippy on exercises.
 # You can optionally set `strict_clippy` to `true` (the default is `false`) to only consider
 # the exercise as done when there are no warnings left.
 # strict_clippy = false
@@ -126,7 +126,7 @@ hint = """???"""
 "#;
 
 const CARGO_TOML: &[u8] =
-    br#"# Don't edit the `bin` list manually! It is updated by `rustlings dev update`
+    br#"# Don't edit the `bin` list manually! It is updated by `kerilings dev update`
 bin = []
 
 [package]
@@ -138,11 +138,11 @@ publish = false
 [dependencies]
 "#;
 
-const README: &str = "# Rustlings 🦀
+const README: &str = "# kerilings 🦀
 
-Welcome to these community Rustlings exercises 😃
+Welcome to these community kerilings exercises 😃
 
-First, [install Rustlings using the official instructions](https://github.com/rust-lang/rustlings) ✅
+First, [install kerilings using the official instructions](https://github.com/AABelkhiria/kerilings) ✅
 
-Then, clone this repository, open a terminal in this directory and run `rustlings` to get started with the exercises 🚀
+Then, clone this repository, open a terminal in this directory and run `kerilings` to get started with the exercises 🚀
 ";

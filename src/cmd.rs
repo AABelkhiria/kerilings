@@ -71,7 +71,7 @@ impl CmdRunner {
             .context(CARGO_METADATA_ERR)?;
 
         if !metadata_output.status.success() {
-            bail!("The command `cargo metadata …` failed. Are you in the `rustlings/` directory?");
+            bail!("The command `cargo metadata …` failed. Are you in the `kerilings/` directory?");
         }
 
         let metadata: CargoMetadata = serde_json::de::from_slice(&metadata_output.stdout)
@@ -93,7 +93,7 @@ impl CmdRunner {
         let mut cmd = Command::new("cargo");
         cmd.arg(subcommand).arg("-q").arg("--bin").arg(bin_name);
 
-        // A hack to make `cargo run` work when developing Rustlings.
+        // A hack to make `cargo run` work when developing kerilings.
         #[cfg(debug_assertions)]
         cmd.arg("--manifest-path")
             .arg("dev/Cargo.toml")

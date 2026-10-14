@@ -5,14 +5,16 @@ exclude = [
 ]
 
 [workspace.package]
-version = "6.5.0"
+version = "0.1.0"
 authors = [
+  "Achraf Belkhiria",
+  # Rustlings, which kerilings is forked from
   "Mo Bitar <mo8it@proton.me>", # https://github.com/mo8it
   "Liv <mokou@fastmail.com>", # https://github.com/shadows-withal
   # Alumni
   "Carol (Nichols || Goulding) <carol.nichols@gmail.com>", # https://github.com/carols10cents
 ]
-repository = "https://github.com/rust-lang/rustlings"
+repository = "https://github.com/AABelkhiria/kerilings"
 license = "MIT"
 edition = "2024" # On Update: Update the edition of `rustfmt` in `dev check` and `CARGO_TOML` in `dev new`.
 rust-version = "1.88"
@@ -22,8 +24,8 @@ serde = { version = "1.0", features = ["derive"] }
 toml = { version = "0.9", default-features = false, features = ["std", "parse", "serde"] }
 
 [package]
-name = "rustlings"
-description = "Small exercises to get you used to reading and writing Rust code!"
+name = "kerilings"
+description = "Small exercises to learn KERI, CESR and ACDC in Rust"
 version.workspace = true
 authors.workspace = true
 repository.workspace = true
@@ -33,6 +35,9 @@ rust-version.workspace = true
 keywords = [
   "exercise",
   "learning",
+  "keri",
+  "cesr",
+  "acdc",
 ]
 include = [
   "/src/",
@@ -49,7 +54,7 @@ anyhow = "1.0"
 clap = { version = "4.5", features = ["derive"] }
 crossterm = { version = "0.29", default-features = false, features = ["windows", "events"] }
 notify = "8.0"
-rustlings-macros = { path = "rustlings-macros", version = "=6.5.0" }
+kerilings-macros = { path = "kerilings-macros", version = "=0.1.0" }
 serde_json = "1.0"
 serde.workspace = true
 toml.workspace = true
@@ -66,8 +71,7 @@ panic = "abort"
 [profile.dev]
 panic = "abort"
 
-[package.metadata.release]
-pre-release-hook = ["./release-hook.sh"]
+["./release-hook.sh"]
 pre-release-commit-message = "Release 🎉"
 
 [workspace.lints.rust]

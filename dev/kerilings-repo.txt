@@ -1,0 +1,1 @@
+This file is used to check if the user tries to run kerilings inside its own repository
