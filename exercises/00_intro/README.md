@@ -1,8 +1,8 @@
 # Intro
 
-Rust uses the `print!` and `println!` macros to print text to the console.
+How kerilings works, and a first CESR code.
 
 ## Further information
 
-- [Hello World](https://doc.rust-lang.org/rust-by-example/hello.html)
-- [Formatted print](https://doc.rust-lang.org/rust-by-example/hello/print.html)
+- [`keri-cesr`](https://docs.rs/keri-cesr)
+- [CESR specification](https://trustoverip.github.io/kswg-cesr-specification/)
