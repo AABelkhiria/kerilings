@@ -1,0 +1,28 @@
+# cargo-deny policy for kerilings.
+
+[graph]
+all-features = true
+
+[licenses]
+private = { ignore = true }
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "Unicode-3.0",
+    # `inotify` and `inotify-sys`, used by `notify` for watch mode on Linux.
+    "ISC",
+    # `notify`.
+    "CC0-1.0",
+]
+confidence-threshold = 0.8
+
+[advisories]
+
+[bans]
+multiple-versions = "warn"
+wildcards = "deny"
+allow-wildcard-paths = true
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"
