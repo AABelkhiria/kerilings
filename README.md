@@ -38,7 +38,7 @@ Everything runs offline, on the published crates:
 Install Rust (1.97 or newer), then kerilings:
 
 ```bash
-cargo install --locked --git https://github.com/AABelkhiria/kerilings
+cargo install --locked kerilings
 ```
 
 Create the exercises and start:
