@@ -47,3 +47,14 @@ But adding tests is recommended.
 
 kerilings is a fork of [Rustlings](https://github.com/rust-lang/rustlings). The `upstream` remote points
 to it; merge its releases to pick up fixes to the CLI.
+
+## Releasing
+
+1. Bump `version` in the root `Cargo.toml` (`[workspace.package]` and the `=` pin on `kerilings-macros`),
+   and run `cargo check` to update `Cargo.lock`.
+2. Add a `## [x.y.z] - YYYY-MM-DD` section to `CHANGELOG.md`.
+3. Push to `main` and wait for the Check workflow to pass.
+4. Run the Release workflow from the Actions tab. It publishes `kerilings-macros` then `kerilings` to
+   crates.io, tags `vx.y.z` and creates the GitHub release from the changelog section.
+
+The Release workflow needs a `crates-io` environment with a `CARGO_REGISTRY_TOKEN` secret.
