@@ -71,9 +71,6 @@ panic = "abort"
 [profile.dev]
 panic = "abort"
 
-["./release-hook.sh"]
-pre-release-commit-message = "Release 🎉"
-
 [workspace.lints.rust]
 unsafe_code = "forbid"
 unstable_features = "forbid"
