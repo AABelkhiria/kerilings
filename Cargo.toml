@@ -21,7 +21,7 @@ authors = [
 
 [workspace.dependencies]
 serde = { version = "1.0", features = ["derive"] }
-toml = { version = "0.9", default-features = false, features = ["std", "parse", "serde"] }
+toml = { version = "1.1", default-features = false, features = ["std", "parse", "serde"] }
 
 [workspace.lints.rust]
 unsafe_code = "forbid"
