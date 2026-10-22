@@ -1,19 +1,18 @@
-# Cargo
-target/
+# Cargo build output
+/target/
+
+# Lockfiles of the nested dev/test projects; keep the root one
 Cargo.lock
 !/Cargo.lock
 
-# State file
+# Exercise progress
 .kerilings-state.txt
 
-# OS
+# Editors and OS
 .DS_Store
 .direnv/
-
-# Editor
-*.swp
-.idea
+.idea/
 *.iml
-
+*.swp
 # Ignore file for editors like Helix
 .ignore
