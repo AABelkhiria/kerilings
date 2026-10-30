@@ -95,8 +95,8 @@ publish = false
 
 [dependencies]
 keri-cesr = { version = "0.1.0", features = ["crypto"] }
-keri-protocol = "0.1.0"
-keri-acdc = "0.1.0"
+keri-protocol = "0.2.0"
+keri-acdc = "0.2.0"
 serde_json = "1.0.151"
 
 [profile.release]
